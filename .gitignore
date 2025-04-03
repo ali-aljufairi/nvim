@@ -1,0 +1,9 @@
+tags
+test.sh
+.luarc.json
+nvim
+
+spell/
+lazy-lock.json
+autoload/plugged/
+autoload/plugged/vim-context-commentstring
