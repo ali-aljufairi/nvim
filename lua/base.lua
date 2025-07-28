@@ -202,7 +202,7 @@ require('lazy').setup({
       },
     },
   },
-  
+
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
   --
   -- This is often very useful to both group configuration, as well as handle
@@ -217,14 +217,14 @@ require('lazy').setup({
   -- Then, because we use the `config` key, the configuration only runs
   -- after the plugin has been loaded:
   --  config = function() ... end
-  
-{
-  "christoomey/vim-tmux-navigator",
-  vim.keymap.set('n', '<C-h>', ':TmuxNavigateLeft<CR>', { desc = 'Move focus to the left window' }),
-  vim.keymap.set('n', '<C-j>', ':TmuxNavigateDown<CR>', { desc = 'Move focus to the window below' }),
-  vim.keymap.set('n', '<C-k>', ':TmuxNavigateUp<CR>', { desc = 'Move focus to the window above' }),
-  vim.keymap.set('n', '<C-l>', ':TmuxNavigateRight<CR>', { desc = 'Move focus to the right window' }),
-},
+
+  {
+    'christoomey/vim-tmux-navigator',
+    vim.keymap.set('n', '<C-h>', ':TmuxNavigateLeft<CR>', { desc = 'Move focus to the left window' }),
+    vim.keymap.set('n', '<C-j>', ':TmuxNavigateDown<CR>', { desc = 'Move focus to the window below' }),
+    vim.keymap.set('n', '<C-k>', ':TmuxNavigateUp<CR>', { desc = 'Move focus to the window above' }),
+    vim.keymap.set('n', '<C-l>', ':TmuxNavigateRight<CR>', { desc = 'Move focus to the right window' }),
+  },
   { -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
@@ -754,7 +754,8 @@ require('lazy').setup({
             if luasnip.expand_or_locally_jumpable() then
               luasnip.expand_or_jump()
             end
-          end, { 'i', 's' }), ['<C-h>'] = cmp.mapping(function()
+          end, { 'i', 's' }),
+          ['<C-h>'] = cmp.mapping(function()
             if luasnip.locally_jumpable(-1) then
               luasnip.jump(-1)
             end
@@ -778,20 +779,20 @@ require('lazy').setup({
   },
 
   {
-    "folke/tokyonight.nvim",
+    'folke/tokyonight.nvim',
     priority = 1000,
     config = function()
-      require("tokyonight").setup({
+      require('tokyonight').setup {
         transparent = true,
         styles = {
-          sidebars = "transparent",
-          floats = "transparent",
+          sidebars = 'transparent',
+          floats = 'transparent',
         },
-      })
-      vim.cmd.colorscheme("tokyonight-night")
-      vim.api.nvim_set_hl(0, "LineNr", { fg = "#DC4074" })
+      }
+      vim.cmd.colorscheme 'tokyonight-night'
+      vim.api.nvim_set_hl(0, 'LineNr', { fg = '#DC4074' })
       -- Optional: further highlight tweaks
-      vim.cmd.hi("Comment gui=none")
+      vim.cmd.hi 'Comment gui=none'
     end,
   },
 
