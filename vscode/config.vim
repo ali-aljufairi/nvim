@@ -44,3 +44,7 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " You can't stop me
 cmap w!! w !sudo tee %
+
+" Highlight yanked text with orange background
+highlight YankHighlight guibg=#F47481 guifg=#000000
+autocmd TextYankPost * lua vim.highlight.on_yank({higroup='YankHighlight', timeout=200})

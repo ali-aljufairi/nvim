@@ -1,14 +1,27 @@
-# kickstart.nvim
+# Ali's Neovim Configuration
 
 ## Introduction
 
-A starting point for Neovim that is:
+A personal Neovim configuration based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim), customized with additional plugins and settings.
 
-* Small
-* Single-file
-* Completely Documented
+This configuration is:
 
-**NOT** a Neovim distribution, but instead a starting point for your configuration.
+* Based on kickstart.nvim as a starting point
+* Extended with custom plugins via vim-plug and Lazy
+* Configured for personal use
+
+**NOT** a Neovim distribution, but a customized configuration for productivity.
+
+## Features
+
+This configuration includes:
+
+* **Plugin Management**: Uses Lazy.nvim for modern plugin management, with some additional plugins via vim-plug
+* **Language Support**: Basic support for multiple languages with LSP, treesitter, and linting
+* **Navigation**: EasyMotion for fast navigation, quick-scope for highlighting
+* **Editing**: Commentary for commenting, speeddating for date incrementing, repeat for repeating actions
+* **UI Enhancements**: Illuminate for highlighting, context-commentstring for smart comments
+* **Custom Plugins**: Additional custom Lua plugins in `lua/custom/plugins/`
 
 ## Installation
 
@@ -36,18 +49,18 @@ External Requirements:
 > See [Install Recipes](#Install-Recipes) for additional Windows and Linux specific notes
 > and quick install snippets
 
-### Install Kickstart
+### Install Configuration
 
 > **NOTE**
 > [Backup](#FAQ) your previous configuration (if any exists)
 
 Neovim's configurations are located under the following paths, depending on your OS:
 
-| OS | PATH |
-| :- | :--- |
-| Linux, MacOS | `$XDG_CONFIG_HOME/nvim`, `~/.config/nvim` |
-| Windows (cmd)| `%localappdata%\nvim\` |
-| Windows (powershell)| `$env:LOCALAPPDATA\nvim\` |
+| OS                   | PATH                                      |
+| :------------------- | :---------------------------------------- |
+| Linux, MacOS         | `$XDG_CONFIG_HOME/nvim`, `~/.config/nvim` |
+| Windows (cmd)        | `%localappdata%\nvim\`                    |
+| Windows (powershell) | `$env:LOCALAPPDATA\nvim\`                 |
 
 #### Recommended Step
 
@@ -57,21 +70,21 @@ fork to your machine using one of the commands below, depending on your OS.
 
 > **NOTE**
 > Your fork's url will be something like this:
-> `https://github.com/<your_github_username>/kickstart.nvim.git`
+> `https://github.com/<your_github_username>/nvim.git`
 
 You likely want to remove `lazy-lock.json` from your fork's `.gitignore` file
-too - it's ignored in the kickstart repo to make maintenance easier, but it's
+too - it's ignored in the original repo to make maintenance easier, but it's
 [recommmended to track it in version control](https://lazy.folke.io/usage/lockfile).
 
-#### Clone kickstart.nvim
+#### Clone the configuration
 > **NOTE**
 > If following the recommended step above (i.e., forking the repo), replace
-> `nvim-lua` with `<your_github_username>` in the commands below
+> `ali-aljufairi` with `<your_github_username>` in the commands below
 
 <details><summary> Linux and Mac </summary>
 
 ```sh
-git clone https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+git clone https://github.com/ali-aljufairi/nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 ```
 
 </details>
@@ -81,13 +94,13 @@ git clone https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HO
 If you're using `cmd.exe`:
 
 ```
-git clone https://github.com/nvim-lua/kickstart.nvim.git "%localappdata%\nvim"
+git clone https://github.com/ali-aljufairi/nvim.git "%localappdata%\nvim"
 ```
 
 If you're using `powershell.exe`
 
 ```
-git clone https://github.com/nvim-lua/kickstart.nvim.git "${env:LOCALAPPDATA}\nvim"
+git clone https://github.com/ali-aljufairi/nvim.git "${env:LOCALAPPDATA}\nvim"
 ```
 
 </details>
@@ -118,22 +131,21 @@ examples of adding popularly requested plugins.
   * You should back it up and then delete all associated files.
   * This includes your existing init.lua and the neovim files in `~/.local`
     which can be deleted with `rm -rf ~/.local/share/nvim/`
-* Can I keep my existing configuration in parallel to kickstart?
+* Can I keep my existing configuration in parallel to this config?
   * Yes! You can use [NVIM_APPNAME](https://neovim.io/doc/user/starting.html#%24NVIM_APPNAME)`=nvim-NAME`
-    to maintain multiple configurations. For example, you can install the kickstart
-    configuration in `~/.config/nvim-kickstart` and create an alias:
+    to maintain multiple configurations. For example, you can install this
+    configuration in `~/.config/nvim-ali` and create an alias:
     ```
-    alias nvim-kickstart='NVIM_APPNAME="nvim-kickstart" nvim'
+    alias nvim-ali='NVIM_APPNAME="nvim-ali" nvim'
     ```
-    When you run Neovim using `nvim-kickstart` alias it will use the alternative
+    When you run Neovim using `nvim-ali` alias it will use the alternative
     config directory and the matching local directory
-    `~/.local/share/nvim-kickstart`. You can apply this approach to any Neovim
+    `~/.local/share/nvim-ali`. You can apply this approach to any Neovim
     distribution that you would like to try out.
 * What if I want to "uninstall" this configuration:
   * See [lazy.nvim uninstall](https://github.com/folke/lazy.nvim#-uninstalling) information
-* Why is the kickstart `init.lua` a single file? Wouldn't it make sense to split it into multiple files?
-  * The main purpose of kickstart is to serve as a teaching tool and a reference
-    configuration that someone can easily use to `git clone` as a basis for their own.
+* Why is the `init.lua` structured this way?
+  * This configuration is based on kickstart.nvim, which serves as a teaching tool.
     As you progress in learning Neovim and Lua, you might consider splitting `init.lua`
     into smaller parts. A fork of kickstart that does this while maintaining the 
     same functionality is available here:

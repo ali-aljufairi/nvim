@@ -7,3 +7,4 @@ spell/
 lazy-lock.json
 autoload/plugged/
 autoload/plugged/vim-context-commentstring
+.DS_Store

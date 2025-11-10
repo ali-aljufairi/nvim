@@ -1,0 +1,23 @@
+{
+	"servers": {
+		"sentery": {
+			"type": "stdio",
+			"command": "npx",
+			"args": [
+				"mcp-remote@latest",
+				"https://mcp.sentry.dev/mcp"
+			]
+		},
+		"terraform": {
+			"command": "docker",
+			"args": [
+				"run",
+				"-i",
+				"--rm",
+				"hashicorp/terraform-mcp-server"
+			],
+			"type": "stdio"
+		}
+	},
+	"inputs": []
+}
