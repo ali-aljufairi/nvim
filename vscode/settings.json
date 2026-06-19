@@ -3,7 +3,7 @@
   "zenMode.centerLayout": false,
   "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
   "vscode-neovim.neovimInitVimPaths.darwin": "$HOME/.config/nvim/init.lua",
-  "vscode-neovim.neovimInitVimPaths.linux": "$HOME/.config/nvim/init.vim",
+  "vscode-neovim.neovimInitVimPaths.linux": "$HOME/.config/nvim/init.lua",
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
@@ -219,7 +219,7 @@
     },
     {
       "key": "h",
-      "name": "Split Horizontal",
+      "name": "Splt Horizontal",
       "type": "command",
       "command": "workbench.action.splitEditorDown"
     },
@@ -291,6 +291,12 @@
           "command": "workbench.action.togglePanel"
         },
         {
+          "key": "h",
+          "name": "Hide AI chat",
+          "type": "command",
+          "command": "workbench.action.closeAuxiliaryBar"
+        },
+        {
           "key": "x",
           "name": "Show extensions",
           "type": "command",
@@ -326,7 +332,7 @@
           "name": "Toggle maximized panel",
           "type": "command",
           "command": "workbench.action.toggleMaximizedPanel"
-        },
+        }
       ]
     },
     {
@@ -466,7 +472,7 @@
           }
         }
       ]
-    },
+    }
   },
   "workbench.colorCustomizations": {
     "editorLineNumber.foreground": "#3f77e0",
@@ -478,7 +484,7 @@
       "statusBarItem.remoteForeground": "#569CD6",
       "activityBar.background": "#2E2E2E",
       "tab.inactiveBackground": "#2E2E2E"
-    },
+    }
   },
   "github.copilot.enable": {
     "*": true,
@@ -815,4 +821,8 @@
   "editor.minimap.enabled": false,
   "gitlens.ai.model": "vscode",
   "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+  "json.schemaDownload.enable": true,
+  "json.schemaDownload.trustedDomains": {
+    "*": true
+  }
 }
