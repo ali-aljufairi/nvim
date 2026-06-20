@@ -138,23 +138,9 @@
     },
     {
       "key": "f",
-      "name": "Find & Replace...",
-      "type": "bindings",
-      "bindings": [
-        {
-          "key": "s",
-          "name": "Symbol",
-          "type": "command",
-          "command": "editor.action.rename",
-          "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
-        },
-        {
-          "key": "p",
-          "name": "Project",
-          "type": "command",
-          "command": "workbench.action.replaceInFiles"
-        }
-      ]
+      "name": "Find current file",
+      "type": "command",
+      "command": "actions.find"
     },
     {
       "key": "g",
@@ -249,12 +235,6 @@
       ]
     },
     {
-      "key": "m",
-      "name": "minimap",
-      "type": "command",
-      "command": "editor.action.toggleMinimap"
-    },
-    {
       "key": "n",
       "name": "highlight",
       "type": "command",
@@ -263,24 +243,24 @@
     },
     {
       "key": "u",
-      "name": "Show UI",
+      "name": "Toggle UI",
       "type": "bindings",
       "bindings": [
         {
           "key": "s",
-          "name": "Show search",
+          "name": "Toggle search",
           "type": "command",
           "command": "workbench.view.search"
         },
         {
           "key": "g",
-          "name": "Show source control",
+          "name": "Toggle source control",
           "type": "command",
           "command": "workbench.view.scm"
         },
         {
           "key": "r",
-          "name": "Show remote explorer",
+          "name": "Toggle remote explorer",
           "type": "command",
           "command": "workbench.view.remote"
         },
@@ -292,41 +272,34 @@
         },
         {
           "key": "h",
-          "name": "Hide AI chat",
+          "name": "Toggle AI chat",
           "type": "command",
-          "command": "workbench.action.closeAuxiliaryBar"
+          "command": "workbench.action.toggleAuxiliaryBar"
         },
         {
           "key": "x",
-          "name": "Show extensions",
+          "name": "Toggle extensions",
           "type": "command",
           "command": "workbench.view.extensions"
         },
         {
           "key": "p",
-          "name": "Show problem",
+          "name": "Toggle problem",
           "type": "command",
           "command": "workbench.actions.view.problems"
         },
         {
           "key": "o",
-          "name": "Show output",
+          "name": "Toggle output",
           "type": "command",
           "command": "workbench.action.output.toggleOutput"
         },
         {
           "key": "d",
-          "name": "Show debug console",
+          "name": "Toggle debug console",
           "type": "command",
           "command": "workbench.debug.action.toggleRepl"
-        }
-      ]
-    },
-    {
-      "key": "t",
-      "name": "UI toggles...",
-      "type": "bindings",
-      "bindings": [
+        },
         {
           "key": "m",
           "name": "Toggle maximized panel",
@@ -537,20 +510,8 @@
     },
     "Ubuntu (WSL)": {
       "path": "C:\\WINDOWS\\System32\\wsl.exe",
-      "args": [
-        "-d",
-        "Ubuntu"
-      ]
+      "args": []
     }
-  },
-  "explorer.confirmDragAndDrop": false,
-  "python.analysis.autoFormatStrings": true,
-  "[python]": {
-    "editor.defaultFormatter": "charliermarsh.ruff"
-  },
-  "notebook.lineNumbers": "on",
-  "[cpp]": {
-    "editor.defaultFormatter": "xoanis.clion-formatter"
   },
   "cSpell.userWords": [
     "Darsen",
@@ -782,45 +743,18 @@
   "debug.openDebug": "neverOpen",
   "editor.tabCompletion": "on",
   "powershell.integratedConsole.focusConsoleOnExecute": false,
-  "files.defaultLanguage": "powershell",
+  "files.defaultLanguage": "plaintext",
   "editor.wordSeparators": "`~!@#%^&*()-=+[{]}\\|;:'\",.<>/?",
   "powershell.buttons.showPanelMovementButtons": true,
   "powershell.codeFolding.showLastLine": false,
   "powershell.sideBar.CommandExplorerVisibility": true,
-  "chat.mcp.serverSampling": {
-    "Context7: context7": {
-      "allowedModels": [
-        "copilot/gpt-4.1",
-        "copilot/auto",
-        "copilot/claude-3.5-sonnet",
-        "copilot/claude-3.7-sonnet",
-        "copilot/claude-3.7-sonnet-thought",
-        "copilot/claude-sonnet-4",
-        "copilot/gemini-2.0-flash-001",
-        "copilot/gemini-2.5-pro",
-        "copilot/gpt-4o",
-        "copilot/gpt-5",
-        "copilot/gpt-5-mini",
-        "copilot/gpt-5-codex",
-        "copilot/grok-code-fast-1",
-        "copilot/o3-mini",
-        "copilot/o4-mini"
-      ]
-    }
-  },
   "chat.mcp.autostart": "never",
   "chat.mcp.gallery.enabled": true,
-  "azureTerraform.survey": {
-    "surveyPromptDate": "2025-10-31T03:55:12.614Z",
-    "surveyPromptIgnoredCount": 0
-  },
   "chat.instructionsFilesLocations": {
     ".github/instructions": true,
     "/Users/ali/.aitk/instructions/": true
   },
   "editor.minimap.enabled": false,
-  "gitlens.ai.model": "vscode",
-  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
   "json.schemaDownload.enable": true,
   "json.schemaDownload.trustedDomains": {
     "*": true
